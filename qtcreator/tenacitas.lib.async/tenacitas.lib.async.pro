@@ -38,3 +38,5 @@ HEADERS += \
 
 
 
+DISTFILES += \
+    $$BASE_DIR/tenacitas.lib.async/README.md
