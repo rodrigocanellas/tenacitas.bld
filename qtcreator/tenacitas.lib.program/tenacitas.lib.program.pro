@@ -1,7 +1,6 @@
 TEMPLATE = subdirs
 
-SUBDIRS = tst \
-          exp 
+SUBDIRS =  exp
 
 include (../common.pri)
 
