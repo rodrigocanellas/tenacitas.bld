@@ -72,11 +72,14 @@ unix {
     static_lib_ext=a
     QMAKE_CXXFLAGS+=-DPOSIX
     QMAKE_CXXFLAGS += -Werror
-    QMAKE_CXXFLAGS += -std=c++20
+    QMAKE_CXXFLAGS += -std=c++20        
     QMAKE_LFLAGS+=-fPIC -Wl,-rpath,$$libs_dir
     LIBS += -L$${third_dir}/lib/$$arch/unix
     LIBS += -lpthread
 }
+
+QMAKE_CXXFLAGS+=-fconcepts-diagnostics-depth=3
+
 
 
 win32 {
