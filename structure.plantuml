@@ -1,0 +1,25 @@
+@startuml
+
+hide empty members
+skinparam linetype ortho
+
+namespace component {
+class alg
+class sto
+class pre
+class evt
+class typ
+class com
+
+alg --> typ
+sto --> typ
+alg --> sto
+pre --> typ
+evt --> typ
+alg --> evt
+pre --> evt
+com --> typ
+com --> evt
+}
+
+@enduml
