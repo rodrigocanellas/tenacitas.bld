@@ -23,10 +23,13 @@ linux:os=linux
 win32:os=win32
 
 
-BASE_DIR=$$PWD/../..
+BASE_DIR=$$PWD/../../
+SRC_DIR=$$BASE_DIR/tenacitas.lib/src
+TST_DIR=$$BASE_DIR/tenacitas.lib/tst
+EXP_DIR=$$BASE_DIR/tenacitas.lib/exp
+
 products_dir=$$BASE_DIR/prd/$$os-$$cfg-$$arch
 third_dir=$$BASE_DIR/tenacitas/3rd
-
 libs_dir=$$products_dir/lib
 bins_dir=$$products_dir/app
 test_dir=$$products_dir/tst
@@ -97,7 +100,9 @@ win32 {
 }
 
 #INCLUDEPATH += $$BASE_DIR/sources
-INCLUDEPATH += $$BASE_DIR
+INCLUDEPATH += $$SRC_DIR
+#INCLUDEPATH += $$TST_DIR
+#INCLUDEPATH += $$EXP_DIR
 INCLUDEPATH += $$UI_DIR
 INCLUDEPATH += $${third_dir}/include
 
