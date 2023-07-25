@@ -24,9 +24,9 @@ win32:os=win32
 
 
 BASE_DIR=$$PWD/../../
-SRC_DIR=$$BASE_DIR/tenacitas.lib/src
-TST_DIR=$$BASE_DIR/tenacitas.lib/tst
-EXP_DIR=$$BASE_DIR/tenacitas.lib/exp
+LIB_SRC_DIR=$$BASE_DIR/tenacitas.lib/src
+LIB_TST_DIR=$$BASE_DIR/tenacitas.lib/tst
+LIB_EXP_DIR=$$BASE_DIR/tenacitas.lib/exp
 
 products_dir=$$BASE_DIR/prd/$$os-$$cfg-$$arch
 third_dir=$$BASE_DIR/tenacitas/3rd
@@ -34,6 +34,7 @@ libs_dir=$$products_dir/lib
 bins_dir=$$products_dir/app
 test_dir=$$products_dir/tst
 exp_dir=$$products_dir/exp
+poc_dir=$$products_dir/poc
 plgs_dir=$$products_dir/plg
 tmp_dir=$$products_dir/.tmp/$$TARGET
 
@@ -55,6 +56,10 @@ equals(TEMPLATE,app) {
     contains(CONFIG,example){
         DESTDIR = $$exp_dir
     }
+    contains(CONFIG,poc){
+        DESTDIR = $$poc_dir
+    }
+
 }
 
 equals(TEMPLATE,lib) {
@@ -99,10 +104,10 @@ win32 {
     LIBS += -L$${third_dir}/lib/windows/$$arch
 }
 
-#INCLUDEPATH += $$BASE_DIR/sources
-INCLUDEPATH += $$SRC_DIR
-#INCLUDEPATH += $$TST_DIR
-#INCLUDEPATH += $$EXP_DIR
+INCLUDEPATH += $$BASE_DIR
+#INCLUDEPATH += $$LIB_SRC_DIR
+#INCLUDEPATH += $$LIB_TST_DIR
+#INCLUDEPATH += $$LIB_EXP_DIR
 INCLUDEPATH += $$UI_DIR
 INCLUDEPATH += $${third_dir}/include
 
