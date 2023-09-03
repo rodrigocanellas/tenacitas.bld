@@ -45,6 +45,7 @@ OBJECTS_DIR += $${tmp_dir}/obj
 
 CONFIG += c++20
 
+
 equals(TEMPLATE,app) {
     DESTDIR = $$bins_dir
     contains(CONFIG,test) {
