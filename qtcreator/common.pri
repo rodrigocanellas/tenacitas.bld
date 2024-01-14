@@ -1,5 +1,5 @@
 
-QMAKE_CXXFLAGS += -DTENACITAS_LOG
+# QMAKE_CXXFLAGS += -DTENACITAS_LOG
 
 CONFIG += sdk_no_version_check
 
@@ -23,7 +23,8 @@ linux:os=linux
 win32:os=win32
 
 
-BASE_DIR=$$PWD/../../
+BASE_DIR=$$PWD/../..
+
 
 products_dir=$$BASE_DIR/prd/$$os-$$cfg-$$arch
 third_dir=$$BASE_DIR/tenacitas/3rd
@@ -102,17 +103,17 @@ win32 {
     LIBS += -L$${third_dir}/lib/windows/$$arch
 }
 
+
 INCLUDEPATH += $$BASE_DIR
-#INCLUDEPATH += $$LIB_SRC_DIR
-#INCLUDEPATH += $$BASE_DIR/tenacitas.lib/tst
-#INCLUDEPATH += $$BASE_DIR/tenacitas.lib/exp
 INCLUDEPATH += $$UI_DIR
 INCLUDEPATH += $${third_dir}/include
+INCLUDEPATH += $$BASE_DIR_LIB
 
 
 message("_PRO_FILE_PWD_ = "$$_PRO_FILE_PWD_)
-message("build_type ="$$build_type)
 message("BASE_DIR= "$$BASE_DIR)
+message("BASE_DIR_LIB= "$$BASE_DIR_LIB)
+message("build_type ="$$build_type)
 message("products_dir = "$$products_dir)
 message("TARGET = "$$TARGET)
 message("SPEC = "$$spec)
